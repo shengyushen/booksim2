@@ -65,6 +65,7 @@ TrafficPattern * TrafficPattern::New(string const & pattern, int nodes,
   vector<string> params = tokenize_str(param_str);
   
   TrafficPattern * result = NULL;
+	cout<<"SSY : "<<pattern_name<<endl;
   if(pattern_name == "bitcomp") {
     result = new BitCompTrafficPattern(nodes);
   } else if(pattern_name == "transpose") {
@@ -325,6 +326,7 @@ int NeighborTrafficPattern::dest(int source)
       (((source / offset) % (_xr * _k) + 1) % (_xr * _k));
     offset *= (_xr * _k);
   }
+	cout <<"SSY : "<< "src :"<<source<<" dst : "<<result<<endl;
   return result;
 }
 

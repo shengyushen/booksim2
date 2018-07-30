@@ -83,7 +83,7 @@ void FlatFlyOnChip::_ComputeSize( const Configuration &config )
 
   //how many routers in the x or y direction
   _xcount = config.GetInt("x");
-  _ycount = config.GetInt("y");
+  _ycount = config.GetInt("y"); //ssy: useless
   assert(_xcount == _ycount);
   //configuration of hohw many clients in X and Y per router
   _xrouter = config.GetInt("xr");
@@ -94,7 +94,9 @@ void FlatFlyOnChip::_ComputeSize( const Configuration &config )
   gC = _c;
   
   assert(_c == _xrouter*_yrouter);
-
+//ssy : see! this means the number of host to eahc router is c
+// and n  is actually the dimention 
+// and k is the router number of each dimention
   _nodes = powi( _k, _n )*_c;   //network size
 
   _num_of_switch = _nodes / _c;
@@ -247,7 +249,7 @@ void FlatFlyOnChip::_BuildNet( const Configuration &config )
 	}else if (dim ==3){
 	  other = cnt*_k*_k*_k+curr6;
 	}
-	assert(dim < 4);
+	assert(dim < 4); //ssy : see ! no more than 4 dim
 	if(other == node){
 #ifdef DEBUG_FLATFLY
 	  cout << "ignore channel : " << _output << " to node " << node <<" and "<<other<<endl;

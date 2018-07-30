@@ -114,6 +114,7 @@ bool Simulate( BookSimConfig const & config )
    */
 
   assert(trafficManager == NULL);
+cout<<"SSY : sss"<<endl;
   trafficManager = TrafficManager::New( config, net ) ;
 
   /*Start the simulation run
@@ -154,6 +155,7 @@ bool Simulate( BookSimConfig const & config )
 int main( int argc, char **argv )
 {
 
+	cout<<"SSY : sss11"<<endl;
   BookSimConfig config;
 
 
@@ -182,6 +184,7 @@ int main( int argc, char **argv )
 
   /*configure and run the simulator
    */
+	cout<<"SSY : sss2"<<endl;
   bool result = Simulate( config );
   return result ? -1 : 0;
 }

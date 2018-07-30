@@ -43,6 +43,7 @@
 TrafficManager * TrafficManager::New(Configuration const & config,
                                      vector<Network *> const & net)
 {
+cout<<"SSY : TrafficPattern NEW"<<endl;
     TrafficManager * result = NULL;
     string sim_type = config.GetStr("sim_type");
     if((sim_type == "latency") || (sim_type == "throughput")) {
@@ -58,6 +59,7 @@ TrafficManager * TrafficManager::New(Configuration const & config,
 TrafficManager::TrafficManager( const Configuration &config, const vector<Network *> & net )
     : Module( 0, "traffic_manager" ), _net(net), _empty_network(false), _deadlock_timer(0), _reset_time(0), _drain_time(-1), _cur_id(0), _cur_pid(0), _time(0)
 {
+cout<<"SSY : TrafficPattern start"<<endl;
 
     _nodes = _net[0]->NumNodes( );
     _routers = _net[0]->NumRouters( );
@@ -226,7 +228,7 @@ TrafficManager::TrafficManager( const Configuration &config, const vector<Networ
     injection_process.resize(_classes, injection_process.back());
 
     _injection_process.resize(_classes);
-
+cout<<"SSY : TrafficPattern"<<endl;
     for(int c = 0; c < _classes; ++c) {
         _traffic_pattern[c] = TrafficPattern::New(_traffic[c], _nodes, &config);
         _injection_process[c] = InjectionProcess::New(injection_process[c], _nodes, _load[c], &config);
