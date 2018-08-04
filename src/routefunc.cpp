@@ -285,10 +285,10 @@ void fattree_nca( const Router *r, const Flit *f,
     
     int dest = f->dest;
     int router_id = r->GetID(); //routers are numbered with smallest at the top level
-    int routers_per_level = powi(gK, gN-1);
-    int pos = router_id%routers_per_level;
-    int router_depth  = router_id/ routers_per_level; //which level
-    int routers_per_neighborhood = powi(gK,gN-router_depth-1);
+    int routers_per_level = powi(gK, gN-1);//gK is router radix, gN is the total layer of routera, so the routers in each layer is the gK^gN
+    int pos = router_id%routers_per_level;//position in current layer
+    int router_depth  = router_id/ routers_per_level; //which level, from top level 0
+    int routers_per_neighborhood = powi(gK,gN-router_depth-1);//gN-router_depth-1 means the distance from current level to bottom, so this is the number of sub tree coverred by this router
     int router_neighborhood = pos/routers_per_neighborhood; //coverage of this tree
     int router_coverage = powi(gK, gN-router_depth);  //span of the tree from this router
     
@@ -309,7 +309,7 @@ void fattree_nca( const Router *r, const Flit *f,
     } else {
       //up ports are numbered last
       assert(in_channel<gK);//came from a up channel
-      out_port = gK+RandomInt(gK-1);
+      out_port = gK+RandomInt(gK-1);//randomly select an up port
     }
   }  
   outputs->Clear( );
@@ -1938,6 +1938,8 @@ void InitializeRoutingMap( const Configuration & config )
   if(gWriteReqEndVC < 0) {
     gWriteReqEndVC = gNumVCs / 2 - 1;
   }
+  // read and write have no dep
+  //but reply are seperated from req
   gReadReplyBeginVC  = config.GetInt("read_reply_begin_vc");
   if(gReadReplyBeginVC < 0) {
     gReadReplyBeginVC = gNumVCs / 2;

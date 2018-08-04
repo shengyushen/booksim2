@@ -86,8 +86,10 @@ topology = flatfly;
 subnets = 1;
 
 c  = 4;
+//k is the number of up or down port number, 2k is the total number of ports
 k  = 4;
-n  = 2;
+//n seems to be the level of router stack
+n  = 2; 
 
 x  = 4;
 y  = 4;
