@@ -39,7 +39,7 @@
 #include "random_utils.hpp" 
 #include "vc.hpp"
 #include "packet_reply_info.hpp"
-
+//holy crap, this is a fake new operator
 TrafficManager * TrafficManager::New(Configuration const & config,
                                      vector<Network *> const & net)
 {
@@ -67,7 +67,7 @@ cout<<"SSY : TrafficPattern start"<<endl;
     _vcs = config.GetInt("num_vcs");
     _subnets = config.GetInt("subnets");
  
-    _subnet.resize(Flit::NUM_FLIT_TYPES);
+    _subnet.resize(Flit::NUM_FLIT_TYPES);//this is a const, whcih means different subnet run different type of flit
     _subnet[Flit::READ_REQUEST] = config.GetInt("read_request_subnet");
     _subnet[Flit::READ_REPLY] = config.GetInt("read_reply_subnet");
     _subnet[Flit::WRITE_REQUEST] = config.GetInt("write_request_subnet");
@@ -154,6 +154,7 @@ cout<<"SSY : TrafficPattern start"<<endl;
     }
     _write_reply_size.resize(_classes, _write_reply_size.back());
 
+		// Oh: there are different number of packet size
     string packet_size_str = config.GetStr("packet_size");
     if(packet_size_str.empty()) {
         _packet_size.push_back(vector<int>(1, config.GetInt("packet_size")));
@@ -163,7 +164,7 @@ cout<<"SSY : TrafficPattern start"<<endl;
             _packet_size.push_back(tokenize_int(packet_size_strings[i]));
         }
     }
-    _packet_size.resize(_classes, _packet_size.back());
+    _packet_size.resize(_classes, _packet_size.back());// resize means diffenrent number of copies
 
     string packet_size_rate_str = config.GetStr("packet_size_rate");
     if(packet_size_rate_str.empty()) {

@@ -285,12 +285,20 @@ void fattree_nca( const Router *r, const Flit *f,
     
     int dest = f->dest;
     int router_id = r->GetID(); //routers are numbered with smallest at the top level
-    int routers_per_level = powi(gK, gN-1);//gK is router radix, gN is the total layer of routera, so the routers in each layer is the gK^gN
+    int routers_per_level = powi(gK, gN-1);//gK is router radix upward or downward, gN is the total layer of routera, so the routers in each layer is the gK^gN
     int pos = router_id%routers_per_level;//position in current layer
     int router_depth  = router_id/ routers_per_level; //which level, from top level 0
     int routers_per_neighborhood = powi(gK,gN-router_depth-1);//gN-router_depth-1 means the distance from current level to bottom, so this is the number of sub tree coverred by this router
-    int router_neighborhood = pos/routers_per_neighborhood; //coverage of this tree
+    int router_neighborhood = pos/routers_per_neighborhood; //coverage of this tree, this means for each router in current level, it cover a group of routers_per_neighborhood. so every routers_per_neighborhood routers are fully connected to last level, so these routers_per_neighborhood router in current level is orgnized into a group.and I should find out which group it is in, and then use it to determine whether the dest is in its range
     int router_coverage = powi(gK, gN-router_depth);  //span of the tree from this router
+		//cout<<"dest : "<<dest<<endl;
+		//cout<<"router_id : "<<router_id<<endl;
+		//cout<<"pos : "<<pos<<endl;
+		//cout<<"router_depth : "<<router_depth<<endl;
+		//cout<<"routers_per_neighborhood : "<<routers_per_neighborhood<<endl;
+		//cout<<"routers_per_level : "<<routers_per_level<<endl;
+		//cout<<"router_neighborhood : "<<router_neighborhood<<endl;
+		//cout<<"router_coverage : "<<router_coverage<<endl;
     
 
     //NCA reached going down

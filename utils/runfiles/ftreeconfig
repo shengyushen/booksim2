@@ -83,8 +83,8 @@ sim_count          = 1;
 topology = fattree;
 
 
-k  = 4;
-n  = 3;
+k  = 4;//k seems to be the up or down link number, 2k is the total radix
+n  = 3;// the depth of network
 xr = 2;
 yr = 2;
 
@@ -99,3 +99,9 @@ packet_size = 1;
 traffic       = bitcomp;
 
 injection_rate = 0.29;
+
+print_activity = 1 ;
+viewer_trace = 1 ;
+watch_out = ftree ;
+
+

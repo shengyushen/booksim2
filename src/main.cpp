@@ -102,7 +102,7 @@ bool Simulate( BookSimConfig const & config )
   /*To include a new network, must register the network here
    *add an else if statement with the name of the network
    */
-  net.resize(subnets);
+  net.resize(subnets);//so subnet is router chip with radix?
   for (int i = 0; i < subnets; ++i) {
     ostringstream name;
     name << "network_" << i;
@@ -114,7 +114,6 @@ bool Simulate( BookSimConfig const & config )
    */
 
   assert(trafficManager == NULL);
-cout<<"SSY : sss"<<endl;
   trafficManager = TrafficManager::New( config, net ) ;
 
   /*Start the simulation run
@@ -155,7 +154,6 @@ cout<<"SSY : sss"<<endl;
 int main( int argc, char **argv )
 {
 
-	cout<<"SSY : sss11"<<endl;
   BookSimConfig config;
 
 
@@ -167,6 +165,7 @@ int main( int argc, char **argv )
   
   /*initialize routing, traffic, injection functions
    */
+  // only init the routing function, but no injecting function and instance of routers and injectors
   InitializeRoutingMap( config );
 
   gPrintActivity = (config.GetInt("print_activity") > 0);
@@ -184,7 +183,6 @@ int main( int argc, char **argv )
 
   /*configure and run the simulator
    */
-	cout<<"SSY : sss2"<<endl;
   bool result = Simulate( config );
   return result ? -1 : 0;
 }

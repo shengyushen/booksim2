@@ -97,7 +97,7 @@ xr = 2;
 yr = 2;
 
 //the nodes above "limit" does not emit or receiv traffic
-limit = 64;
+//limit = 64;
 
 
 //
