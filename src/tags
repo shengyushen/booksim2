@@ -55,6 +55,7 @@ AvailableFor	buffer_state.cpp	/^int BufferState::PrivateBufferPolicy::AvailableF
 AvailableFor	buffer_state.cpp	/^int BufferState::SharedBufferPolicy::AvailableFor(int vc) const$/;"	f	class:BufferState::SharedBufferPolicy
 AvailableFor	buffer_state.hpp	/^  inline int AvailableFor( int vc = 0 ) const {$/;"	f	class:BufferState
 Average	stats.cpp	/^double Stats::Average( ) const$/;"	f	class:Stats
+BEGIN	lex.yy.c	125;"	d	file:
 BadPermDFlyTrafficPattern	traffic.cpp	/^BadPermDFlyTrafficPattern::BadPermDFlyTrafficPattern(int nodes, int k, int n)$/;"	f	class:BadPermDFlyTrafficPattern
 BadPermDFlyTrafficPattern	traffic.hpp	/^class BadPermDFlyTrafficPattern : public DigitPermutationTrafficPattern {$/;"	c
 BadPermYarcTrafficPattern	traffic.cpp	/^BadPermYarcTrafficPattern::BadPermYarcTrafficPattern(int nodes, int k, int n, $/;"	f	class:BadPermYarcTrafficPattern
@@ -156,6 +157,12 @@ DumpChannelMap	networks/network.cpp	/^void Network::DumpChannelMap( ostream & os
 DumpNodeMap	networks/network.cpp	/^void Network::DumpNodeMap( ostream & os, string const & prefix ) const$/;"	f	class:Network
 DynamicLimitedSharedBufferPolicy	buffer_state.cpp	/^BufferState::DynamicLimitedSharedBufferPolicy::DynamicLimitedSharedBufferPolicy(Configuration const & config, BufferState * parent, const string & name)$/;"	f	class:BufferState::DynamicLimitedSharedBufferPolicy
 DynamicLimitedSharedBufferPolicy	buffer_state.hpp	/^  class DynamicLimitedSharedBufferPolicy : public LimitedSharedBufferPolicy {$/;"	c	class:BufferState
+ECHO	lex.yy.c	604;"	d	file:
+EOB_ACT_CONTINUE_SCAN	lex.yy.c	173;"	d	file:
+EOB_ACT_END_OF_FILE	lex.yy.c	174;"	d	file:
+EOB_ACT_LAST_MATCH	lex.yy.c	175;"	d	file:
+EXIT_SUCCESS	y.tab.c	285;"	d	file:
+EXIT_SUCCESS	y.tab.c	313;"	d	file:
 Empty	buffer.hpp	/^  inline bool Empty( int vc ) const$/;"	f	class:Buffer
 Empty	vc.hpp	/^  inline bool Empty( ) const$/;"	f	class:VC
 Error	module.cpp	/^void Module::Error( const string& msg ) const$/;"	f	class:Module
@@ -166,7 +173,14 @@ EventNextVCState	routers/event_router.cpp	/^EventNextVCState::EventNextVCState( 
 EventNextVCState	routers/event_router.hpp	/^class EventNextVCState : public Module {$/;"	c
 EventRouter	routers/event_router.cpp	/^EventRouter::EventRouter( const Configuration& config,$/;"	f	class:EventRouter
 EventRouter	routers/event_router.hpp	/^class EventRouter : public Router {$/;"	c
+FLEXINT_H	lex.yy.c	29;"	d	file:
+FLEX_BETA	lex.yy.c	13;"	d	file:
+FLEX_SCANNER	lex.yy.c	8;"	d	file:
 FLITCHANNEL_HPP	flitchannel.hpp	38;"	d
+FNUM	y.tab.c	/^    FNUM = 260$/;"	e	enum:yytokentype	file:
+FNUM	y.tab.c	123;"	d	file:
+FNUM	y.tab.h	/^    FNUM = 260$/;"	e	enum:yytokentype
+FNUM	y.tab.h	56;"	d
 FO4	power/power_module.hpp	/^  double FO4   ;		     $/;"	m	class:Power_Module
 FatTree	networks/fattree.cpp	/^FatTree::FatTree( const Configuration& config,const string & name )$/;"	f	class:FatTree
 FatTree	networks/fattree.hpp	/^class FatTree : public Network {$/;"	c
@@ -297,6 +311,13 @@ HeightFromID	networks/qtree.cpp	/^int QTree::HeightFromID( int id ) $/;"	f	class
 HotSpotTrafficPattern	traffic.cpp	/^HotSpotTrafficPattern::HotSpotTrafficPattern(int nodes, vector<int> hotspots, $/;"	f	class:HotSpotTrafficPattern
 HotSpotTrafficPattern	traffic.hpp	/^class HotSpotTrafficPattern : public TrafficPattern {$/;"	c
 INCPATH	Makefile	/^INCPATH = -I. -Iarbiters -Iallocators -Irouters -Inetworks -Ipower$/;"	m
+INITIAL	lex.yy.c	510;"	d	file:
+INT16_MAX	lex.yy.c	71;"	d	file:
+INT16_MIN	lex.yy.c	62;"	d	file:
+INT32_MAX	lex.yy.c	74;"	d	file:
+INT32_MIN	lex.yy.c	65;"	d	file:
+INT8_MAX	lex.yy.c	68;"	d	file:
+INT8_MIN	lex.yy.c	59;"	d	file:
 IQRouter	routers/iq_router.cpp	/^IQRouter::IQRouter( Configuration const & config, Module *parent, $/;"	f	class:IQRouter
 IQRouter	routers/iq_router.hpp	/^class IQRouter : public Router {$/;"	c
 IncrWaiting	routers/event_router.cpp	/^void EventNextVCState::IncrWaiting( int vc, int w_input, int w_vc )$/;"	f	class:EventNextVCState
@@ -370,6 +391,10 @@ Min	stats.cpp	/^double Stats::Min( ) const$/;"	f	class:Stats
 Module	module.cpp	/^Module::Module( Module *parent, const string& name )$/;"	f	class:Module
 Module	module.hpp	/^class Module {$/;"	c
 N	power/power_module.hpp	/^  double N;$/;"	m	struct:wire
+NUM	y.tab.c	/^    NUM = 259,$/;"	e	enum:yytokentype	file:
+NUM	y.tab.c	122;"	d	file:
+NUM	y.tab.h	/^    NUM = 259,$/;"	e	enum:yytokentype
+NUM	y.tab.h	55;"	d
 NUM_FLIT_TYPES	flit.hpp	/^  const static int NUM_FLIT_TYPES = 5;$/;"	m	class:Flit
 Name	module.hpp	/^  inline const string & Name() const { return _name; }$/;"	f	class:Module
 NeighborTrafficPattern	traffic.cpp	/^NeighborTrafficPattern::NeighborTrafficPattern(int nodes, int k, int n, int xr)$/;"	f	class:NeighborTrafficPattern
@@ -459,6 +484,7 @@ QUALITY	rng.c	45;"	d	file:
 R	power/power_module.hpp	/^  double R     ;                         $/;"	m	class:Power_Module
 READ_REPLY	flit.hpp	/^		  READ_REPLY    = 1,$/;"	e	enum:Flit::FlitType
 READ_REQUEST	flit.hpp	/^  enum FlitType { READ_REQUEST  = 0, $/;"	e	enum:Flit::FlitType
+REJECT	lex.yy.c	486;"	d	file:
 RandomFloat	random_utils.hpp	/^inline double RandomFloat(  ) {$/;"	f
 RandomFloat	random_utils.hpp	/^inline double RandomFloat( double max ) {$/;"	f
 RandomInt	random_utils.hpp	/^inline int RandomInt( int max ) {$/;"	f
@@ -519,6 +545,10 @@ STALL_BUFFER_RESERVED	routers/router.cpp	/^int const Router::STALL_BUFFER_RESERV
 STALL_BUFFER_RESERVED	routers/router.hpp	/^  static int const STALL_BUFFER_RESERVED;$/;"	m	class:Router
 STALL_CROSSBAR_CONFLICT	routers/router.cpp	/^int const Router::STALL_CROSSBAR_CONFLICT = -6;$/;"	m	class:Router	file:
 STALL_CROSSBAR_CONFLICT	routers/router.hpp	/^  static int const STALL_CROSSBAR_CONFLICT;$/;"	m	class:Router
+STR	y.tab.c	/^    STR = 258,$/;"	e	enum:yytokentype	file:
+STR	y.tab.c	121;"	d	file:
+STR	y.tab.h	/^    STR = 258,$/;"	e	enum:yytokentype
+STR	y.tab.h	54;"	d
 SaveRandomState	random_utils.cpp	/^void SaveRandomState( std::vector<long> & save_x, std::vector<double> & save_u ) {$/;"	f
 SelAlloc	allocators/selalloc.cpp	/^SelAlloc::SelAlloc( Module *parent, const string& name,$/;"	f	class:SelAlloc
 SelAlloc	allocators/selalloc.hpp	/^class SelAlloc : public SparseAllocator {$/;"	c
@@ -599,6 +629,9 @@ Tree4	networks/tree4.cpp	/^Tree4::Tree4( const Configuration& config, const stri
 Tree4	networks/tree4.hpp	/^class Tree4 : public Network {$/;"	c
 TreeArbiter	arbiters/tree_arb.cpp	/^TreeArbiter::TreeArbiter( Module *parent, const string &name,$/;"	f	class:TreeArbiter
 TreeArbiter	arbiters/tree_arb.hpp	/^class TreeArbiter : public Arbiter {$/;"	c
+UINT16_MAX	lex.yy.c	80;"	d	file:
+UINT32_MAX	lex.yy.c	83;"	d	file:
+UINT8_MAX	lex.yy.c	77;"	d	file:
 UniformBackgroundTrafficPattern	traffic.cpp	/^UniformBackgroundTrafficPattern::UniformBackgroundTrafficPattern(int nodes, vector<int> excluded_nodes)$/;"	f	class:UniformBackgroundTrafficPattern
 UniformBackgroundTrafficPattern	traffic.hpp	/^class UniformBackgroundTrafficPattern : public RandomTrafficPattern {$/;"	c
 UniformRandomTrafficPattern	traffic.cpp	/^UniformRandomTrafficPattern::UniformRandomTrafficPattern(int nodes)$/;"	f	class:UniformRandomTrafficPattern
@@ -645,6 +678,152 @@ YACC	Makefile	/^YACC   = bison -y$/;"	m
 YACC_HDRS	Makefile	/^YACC_HDRS = y.tab.h$/;"	m
 YACC_OBJS	Makefile	/^YACC_OBJS = y.tab.o$/;"	m
 YACC_SRCS	Makefile	/^YACC_SRCS = y.tab.c$/;"	m
+YYABORT	y.tab.c	555;"	d	file:
+YYACCEPT	y.tab.c	554;"	d	file:
+YYBACKUP	y.tab.c	561;"	d	file:
+YYBISON	y.tab.c	44;"	d	file:
+YYBISON_VERSION	y.tab.c	47;"	d	file:
+YYCASE_	y.tab.c	902;"	d	file:
+YYCASE_	y.tab.c	912;"	d	file:
+YYCOPY	y.tab.c	377;"	d	file:
+YYCOPY	y.tab.c	380;"	d	file:
+YYCOPY_NEEDED	y.tab.c	352;"	d	file:
+YYDEBUG	y.tab.c	104;"	d	file:
+YYDEBUG	y.tab.h	37;"	d
+YYDPRINTF	y.tab.c	592;"	d	file:
+YYDPRINTF	y.tab.c	707;"	d	file:
+YYEMPTY	y.tab.c	551;"	d	file:
+YYEOF	y.tab.c	552;"	d	file:
+YYERRCODE	y.tab.c	580;"	d	file:
+YYERROR	y.tab.c	556;"	d	file:
+YYERROR_VERBOSE	y.tab.c	92;"	d	file:
+YYERROR_VERBOSE	y.tab.c	93;"	d	file:
+YYERROR_VERBOSE	y.tab.c	95;"	d	file:
+YYFINAL	y.tab.c	393;"	d	file:
+YYFPRINTF	y.tab.c	589;"	d	file:
+YYFREE	y.tab.c	323;"	d	file:
+YYINITDEPTH	y.tab.c	716;"	d	file:
+YYLAST	y.tab.c	395;"	d	file:
+YYMALLOC	y.tab.c	317;"	d	file:
+YYMAXDEPTH	y.tab.c	727;"	d	file:
+YYMAXUTOK	y.tab.c	409;"	d	file:
+YYNNTS	y.tab.c	400;"	d	file:
+YYNRULES	y.tab.c	402;"	d	file:
+YYNSTATES	y.tab.c	404;"	d	file:
+YYNTOKENS	y.tab.c	398;"	d	file:
+YYPACT_NINF	y.tab.c	474;"	d	file:
+YYPOPSTACK	y.tab.c	1027;"	d	file:
+YYPULL	y.tab.c	59;"	d	file:
+YYPURE	y.tab.c	53;"	d	file:
+YYPUSH	y.tab.c	56;"	d	file:
+YYRECOVERING	y.tab.c	559;"	d	file:
+YYSIZE_MAXIMUM	y.tab.c	196;"	d	file:
+YYSIZE_T	y.tab.c	185;"	d	file:
+YYSIZE_T	y.tab.c	187;"	d	file:
+YYSIZE_T	y.tab.c	190;"	d	file:
+YYSIZE_T	y.tab.c	192;"	d	file:
+YYSKELETON_NAME	y.tab.c	50;"	d	file:
+YYSTACK_ALLOC	y.tab.c	271;"	d	file:
+YYSTACK_ALLOC	y.tab.c	275;"	d	file:
+YYSTACK_ALLOC	y.tab.c	280;"	d	file:
+YYSTACK_ALLOC	y.tab.c	303;"	d	file:
+YYSTACK_ALLOC_MAXIMUM	y.tab.c	300;"	d	file:
+YYSTACK_ALLOC_MAXIMUM	y.tab.c	306;"	d	file:
+YYSTACK_BYTES	y.tab.c	348;"	d	file:
+YYSTACK_FREE	y.tab.c	294;"	d	file:
+YYSTACK_FREE	y.tab.c	304;"	d	file:
+YYSTACK_GAP_MAXIMUM	y.tab.c	344;"	d	file:
+YYSTACK_RELOCATE	y.tab.c	359;"	d	file:
+YYSTATE	lex.yy.c	132;"	d	file:
+YYSTYPE	y.tab.c	/^typedef union YYSTYPE YYSTYPE;$/;"	t	typeref:union:YYSTYPE	file:
+YYSTYPE	y.tab.c	/^union YYSTYPE$/;"	u	file:
+YYSTYPE	y.tab.h	/^typedef union YYSTYPE YYSTYPE;$/;"	t	typeref:union:YYSTYPE
+YYSTYPE	y.tab.h	/^union YYSTYPE$/;"	u
+YYSTYPE_IS_DECLARED	y.tab.c	141;"	d	file:
+YYSTYPE_IS_DECLARED	y.tab.h	74;"	d
+YYSTYPE_IS_TRIVIAL	y.tab.c	140;"	d	file:
+YYSTYPE_IS_TRIVIAL	y.tab.h	73;"	d
+YYTABLES_NAME	lex.yy.c	1800;"	d	file:
+YYTABLE_NINF	y.tab.c	479;"	d	file:
+YYTERROR	y.tab.c	579;"	d	file:
+YYTOKENTYPE	y.tab.c	112;"	d	file:
+YYTOKENTYPE	y.tab.h	45;"	d
+YYTRANSLATE	y.tab.c	411;"	d	file:
+YYUNDEFTOK	y.tab.c	408;"	d	file:
+YYUSE	y.tab.c	239;"	d	file:
+YYUSE	y.tab.c	241;"	d	file:
+YY_	y.tab.c	202;"	d	file:
+YY_	y.tab.c	206;"	d	file:
+YY_ATTRIBUTE	y.tab.c	214;"	d	file:
+YY_ATTRIBUTE	y.tab.c	216;"	d	file:
+YY_ATTRIBUTE_PURE	y.tab.c	221;"	d	file:
+YY_ATTRIBUTE_UNUSED	y.tab.c	225;"	d	file:
+YY_AT_BOL	lex.yy.c	340;"	d	file:
+YY_BREAK	lex.yy.c	683;"	d	file:
+YY_BUFFER_EOF_PENDING	lex.yy.c	256;"	d	file:
+YY_BUFFER_NEW	lex.yy.c	244;"	d	file:
+YY_BUFFER_NORMAL	lex.yy.c	245;"	d	file:
+YY_BUFFER_STATE	lex.yy.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
+YY_BUF_SIZE	lex.yy.c	149;"	d	file:
+YY_BUF_SIZE	lex.yy.c	151;"	d	file:
+YY_CHAR	lex.yy.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CURRENT_BUFFER	lex.yy.c	272;"	d	file:
+YY_CURRENT_BUFFER_LVALUE	lex.yy.c	279;"	d	file:
+YY_DECL	lex.yy.c	671;"	d	file:
+YY_DECL_IS_OURS	lex.yy.c	667;"	d	file:
+YY_DO_BEFORE_ACTION	lex.yy.c	371;"	d	file:
+YY_END_OF_BUFFER	lex.yy.c	379;"	d	file:
+YY_END_OF_BUFFER_CHAR	lex.yy.c	140;"	d	file:
+YY_EXIT_FAILURE	lex.yy.c	1596;"	d	file:
+YY_EXTRA_TYPE	lex.yy.c	521;"	d	file:
+YY_FATAL_ERROR	lex.yy.c	658;"	d	file:
+YY_FLEX_MAJOR_VERSION	lex.yy.c	9;"	d	file:
+YY_FLEX_MINOR_VERSION	lex.yy.c	10;"	d	file:
+YY_FLEX_SUBMINOR_VERSION	lex.yy.c	11;"	d	file:
+YY_FLUSH_BUFFER	lex.yy.c	308;"	d	file:
+YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN	y.tab.c	246;"	d	file:
+YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN	y.tab.c	256;"	d	file:
+YY_IGNORE_MAYBE_UNINITIALIZED_END	y.tab.c	250;"	d	file:
+YY_IGNORE_MAYBE_UNINITIALIZED_END	y.tab.c	257;"	d	file:
+YY_INITIAL_VALUE	y.tab.c	253;"	d	file:
+YY_INITIAL_VALUE	y.tab.c	260;"	d	file:
+YY_INPUT	lex.yy.c	505;"	d	file:
+YY_INPUT	lex.yy.c	506;"	d	file:
+YY_INPUT	lex.yy.c	611;"	d	file:
+YY_INT_ALIGNED	lex.yy.c	4;"	d	file:
+YY_LESS_LINENO	lex.yy.c	177;"	d	file:
+YY_LINENO_REWIND_TO	lex.yy.c	178;"	d	file:
+YY_LOCATION_PRINT	y.tab.c	600;"	d	file:
+YY_MORE_ADJ	lex.yy.c	488;"	d	file:
+YY_NEW_FILE	lex.yy.c	138;"	d	file:
+YY_NO_INPUT	lex.yy.c	492;"	d	file:
+YY_NULL	lex.yy.c	112;"	d	file:
+YY_NULLPTR	y.tab.c	84;"	d	file:
+YY_NULLPTR	y.tab.c	86;"	d	file:
+YY_NUM_RULES	lex.yy.c	378;"	d	file:
+YY_READ_BUF_SIZE	lex.yy.c	593;"	d	file:
+YY_READ_BUF_SIZE	lex.yy.c	595;"	d	file:
+YY_REDUCE_PRINT	y.tab.c	697;"	d	file:
+YY_REDUCE_PRINT	y.tab.c	710;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	lex.yy.c	489;"	d	file:
+YY_RULE_SETUP	lex.yy.c	686;"	d	file:
+YY_SC_TO_UI	lex.yy.c	119;"	d	file:
+YY_STACK_PRINT	y.tab.c	666;"	d	file:
+YY_STACK_PRINT	y.tab.c	709;"	d	file:
+YY_START	lex.yy.c	131;"	d	file:
+YY_START_STACK_INCR	lex.yy.c	653;"	d	file:
+YY_STATE_BUF_SIZE	lex.yy.c	157;"	d	file:
+YY_STATE_EOF	lex.yy.c	135;"	d	file:
+YY_STRUCT_YY_BUFFER_STATE	lex.yy.c	197;"	d	file:
+YY_SYMBOL_PRINT	y.tab.c	604;"	d	file:
+YY_SYMBOL_PRINT	y.tab.c	708;"	d	file:
+YY_TYPEDEF_YY_BUFFER_STATE	lex.yy.c	160;"	d	file:
+YY_TYPEDEF_YY_SIZE_T	lex.yy.c	165;"	d	file:
+YY_USER_ACTION	lex.yy.c	678;"	d	file:
+YY_USE_CONST	lex.yy.c	100;"	d	file:
+YY_USE_CONST	lex.yy.c	93;"	d	file:
+YY_YY_Y_TAB_H_INCLUDED	y.tab.c	101;"	d	file:
+YY_YY_Y_TAB_H_INCLUDED	y.tab.h	34;"	d
 _ALLOCATOR_HPP_	allocators/allocator.hpp	29;"	d
 _ANYNET_HPP_	networks/anynet.hpp	29;"	d
 _ARBITER_HPP_	arbiters/arbiter.hpp	35;"	d
@@ -729,6 +908,8 @@ _MultiQueueForOutput	routers/chaos_router.cpp	/^int ChaosRouter::_MultiQueueForO
 _MultiQueueFull	routers/chaos_router.cpp	/^bool ChaosRouter::_MultiQueueFull( int mq ) const$/;"	f	class:ChaosRouter
 _NETWORK_HPP_	networks/network.hpp	29;"	d
 _NextInterestingChannel	routers/chaos_router.cpp	/^void ChaosRouter::_NextInterestingChannel( ) $/;"	f	class:ChaosRouter
+_Noreturn	y.tab.c	231;"	d	file:
+_Noreturn	y.tab.c	233;"	d	file:
 _OUTPUTSET_HPP_	outputset.hpp	29;"	d
 _OutChannel	networks/fly.cpp	/^int KNFly::_OutChannel( int stage, int addr, int port ) const$/;"	f	class:KNFly
 _OutputAdvance	routers/chaos_router.cpp	/^void ChaosRouter::_OutputAdvance( )$/;"	f	class:ChaosRouter
@@ -805,6 +986,7 @@ _VCAllocUpdate	routers/iq_router.cpp	/^void IQRouter::_VCAllocUpdate( )$/;"	f	cl
 _VC_HPP_	vc.hpp	29;"	d
 _WAVEFRONT_HPP_	allocators/wavefront.hpp	29;"	d
 _WireLatency	networks/tree4.cpp	/^int Tree4::_WireLatency( int height1, int pos1, int height2, int pos2 )$/;"	f	class:Tree4
+__STDC_LIMIT_MACROS	lex.yy.c	39;"	d	file:
 _a	networks/dragonfly.hpp	/^  int _p, _a, _g;$/;"	m	class:DragonFlyNew
 _acc_stopping_threshold	trafficmanager.hpp	/^  vector<double> _acc_stopping_threshold;$/;"	m	class:TrafficManager
 _acc_warmup_threshold	trafficmanager.hpp	/^  vector<double> _acc_warmup_threshold;$/;"	m	class:TrafficManager
@@ -1312,6 +1494,7 @@ active	vc.hpp	/^  enum eVCState { state_min = 0, idle = state_min, routing, vc_a
 adaptive_xy_yx_mesh	routefunc.cpp	/^void adaptive_xy_yx_mesh( const Router *r, const Flit *f, $/;"	f
 adaptive_xyyx_flatfly	networks/flatfly_onchip.cpp	/^void adaptive_xyyx_flatfly( const Router *r, const Flit *f, int in_channel, $/;"	f
 age_based	trafficmanager.hpp	/^  enum ePriority { class_based, age_based, network_age_based, local_age_based, queue_length_based, hop_count_based, sequence_based, none };$/;"	e	enum:TrafficManager::ePriority
+alloca	y.tab.c	278;"	d	file:
 areaChannel	power/power_module.cpp	/^double Power_Module:: areaChannel (double K, double N, double M){$/;"	f	class:Power_Module
 areaCrossbar	power/power_module.cpp	/^double Power_Module:: areaCrossbar(double Inputs, double Outputs) {$/;"	f	class:Power_Module
 areaInputModule	power/power_module.cpp	/^double Power_Module:: areaInputModule(double Words) {$/;"	f	class:Power_Module
@@ -1407,6 +1590,20 @@ find_ran_intm	networks/flatfly_onchip.cpp	/^int find_ran_intm (int src, int dest
 flatfly_outport	networks/flatfly_onchip.cpp	/^int flatfly_outport(int dest, int rID) {$/;"	f
 flatfly_outport_yx	networks/flatfly_onchip.cpp	/^int flatfly_outport_yx(int dest, int rID) {$/;"	f
 flatfly_transformation	networks/flatfly_onchip.cpp	/^int flatfly_transformation(int dest){$/;"	f
+flex_int16_t	lex.yy.c	/^typedef int16_t flex_int16_t;$/;"	t	file:
+flex_int16_t	lex.yy.c	/^typedef short int flex_int16_t;$/;"	t	file:
+flex_int32_t	lex.yy.c	/^typedef int flex_int32_t;$/;"	t	file:
+flex_int32_t	lex.yy.c	/^typedef int32_t flex_int32_t;$/;"	t	file:
+flex_int8_t	lex.yy.c	/^typedef int8_t flex_int8_t;$/;"	t	file:
+flex_int8_t	lex.yy.c	/^typedef signed char flex_int8_t;$/;"	t	file:
+flex_uint16_t	lex.yy.c	/^typedef uint16_t flex_uint16_t;$/;"	t	file:
+flex_uint16_t	lex.yy.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	file:
+flex_uint32_t	lex.yy.c	/^typedef uint32_t flex_uint32_t;$/;"	t	file:
+flex_uint32_t	lex.yy.c	/^typedef unsigned int flex_uint32_t;$/;"	t	file:
+flex_uint8_t	lex.yy.c	/^typedef uint8_t flex_uint8_t;$/;"	t	file:
+flex_uint8_t	lex.yy.c	/^typedef unsigned char flex_uint8_t; $/;"	t	file:
+fnum	y.tab.c	/^  double fnum;$/;"	m	union:YYSTYPE	file:
+fnum	y.tab.h	/^  double fnum;$/;"	m	union:YYSTYPE
 full	routers/chaos_router.hpp	/^    full,          \/\/  T****H    ready to send$/;"	e	enum:ChaosRouter::eQState
 gA	networks/dragonfly.cpp	/^int gP, gA, gG;$/;"	v
 gC	main.cpp	/^int gC;\/\/concentration$/;"	v
@@ -1466,6 +1663,7 @@ la_route_set	flit.hpp	/^  OutputSet la_route_set;$/;"	m	class:Flit
 label	allocators/allocator.hpp	/^    int label;$/;"	m	struct:Allocator::sRequest
 label	arbiters/prio_arb.hpp	/^    int label;$/;"	m	struct:PriorityArbiter::sRequest
 leaving	routers/chaos_router.hpp	/^    leaving,       \/\/    T***>   input avail$/;"	e	enum:ChaosRouter::eQState
+lineno	lex.yy.c	/^static unsigned int lineno = 1;$/;"	v	file:
 local_age_based	trafficmanager.hpp	/^  enum ePriority { class_based, age_based, network_age_based, local_age_based, queue_length_based, hop_count_based, sequence_based, none };$/;"	e	enum:TrafficManager::ePriority
 local_age_based	vc.hpp	/^  enum ePrioType { local_age_based, queue_length_based, hop_count_based, none, other };$/;"	e	enum:VC::ePrioType
 log_two	misc_utils.cpp	/^int log_two( int x )$/;"	f
@@ -1483,11 +1681,15 @@ min_dragonflynew	networks/dragonfly.cpp	/^void min_dragonflynew( const Router *r
 min_flatfly	networks/flatfly_onchip.cpp	/^void min_flatfly( const Router *r, const Flit *f, int in_channel, $/;"	f
 mod_diff	rng.c	23;"	d	file:
 mod_sum	rng-double.c	22;"	d	file:
+name	y.tab.c	/^  char   *name;$/;"	m	union:YYSTYPE	file:
+name	y.tab.h	/^  char   *name;$/;"	m	union:YYSTYPE
 net	power/power_module.hpp	/^  Network * net;$/;"	m	class:Power_Module
 network_age_based	trafficmanager.hpp	/^  enum ePriority { class_based, age_based, network_age_based, local_age_based, queue_length_based, hop_count_based, sequence_based, none };$/;"	e	enum:TrafficManager::ePriority
 node_list	networks/anynet.hpp	/^  map<int, int > node_list;$/;"	m	class:AnyNet
 none	trafficmanager.hpp	/^  enum ePriority { class_based, age_based, network_age_based, local_age_based, queue_length_based, hop_count_based, sequence_based, none };$/;"	e	enum:TrafficManager::ePriority
 none	vc.hpp	/^  enum ePrioType { local_age_based, queue_length_based, hop_count_based, none, other };$/;"	e	enum:VC::ePrioType
+num	y.tab.c	/^  int    num;$/;"	m	union:YYSTYPE	file:
+num	y.tab.h	/^  int    num;$/;"	m	union:YYSTYPE
 numVC	power/power_module.hpp	/^  double numVC;$/;"	m	class:Power_Module
 operator <	outputset.hpp	/^inline bool operator<(const OutputSet::sSetElement & se1, $/;"	f
 operator <<	flit.cpp	/^ostream& operator<<( ostream& os, const Flit& f )$/;"	f
@@ -1571,6 +1773,7 @@ sRequest	arbiters/prio_arb.hpp	/^  struct sRequest {$/;"	s	class:PriorityArbiter
 sSetElement	outputset.hpp	/^  struct sSetElement {$/;"	s	class:OutputSet
 sequence_based	trafficmanager.hpp	/^  enum ePriority { class_based, age_based, network_age_based, local_age_based, queue_length_based, hop_count_based, sequence_based, none };$/;"	e	enum:TrafficManager::ePriority
 shared	routers/chaos_router.hpp	/^    shared         \/\/ >**HT**>$/;"	e	enum:ChaosRouter::eQState
+short	y.tab.c	156;"	d	file:
 source	packet_reply_info.hpp	/^  int source;$/;"	m	class:PacketReplyInfo
 src	flit.hpp	/^  int  src;$/;"	m	class:Flit
 src_vc	routers/event_router.hpp	/^    int  src_vc;$/;"	m	struct:EventRouter::tArrivalEvent
@@ -1611,6 +1814,7 @@ ugal_dragonflynew	networks/dragonfly.cpp	/^void ugal_dragonflynew( const Router 
 ugal_flatfly_onchip	networks/flatfly_onchip.cpp	/^void ugal_flatfly_onchip( const Router *r, const Flit *f, int in_channel,$/;"	f
 ugal_pni_flatfly_onchip	networks/flatfly_onchip.cpp	/^void ugal_pni_flatfly_onchip( const Router *r, const Flit *f, int in_channel,$/;"	f
 ugal_xyyx_flatfly_onchip	networks/flatfly_onchip.cpp	/^void ugal_xyyx_flatfly_onchip( const Router *r, const Flit *f, int in_channel,$/;"	f
+unput	lex.yy.c	194;"	d	file:
 valiant_flatfly	networks/flatfly_onchip.cpp	/^void valiant_flatfly( const Router *r, const Flit *f, int in_channel, $/;"	f
 valiant_mesh	routefunc.cpp	/^void valiant_mesh( const Router *r, const Flit *f, int in_channel, OutputSet *outputs, bool inject )$/;"	f
 valiant_ni_torus	routefunc.cpp	/^void valiant_ni_torus( const Router *r, const Flit *f, int in_channel, $/;"	f
@@ -1636,6 +1840,143 @@ xy_yx_cmesh	networks/cmesh.cpp	/^void xy_yx_cmesh( const Router *r, const Flit *
 xy_yx_mesh	routefunc.cpp	/^void xy_yx_mesh( const Router *r, const Flit *f, $/;"	f
 xy_yx_no_express_cmesh	networks/cmesh.cpp	/^void xy_yx_no_express_cmesh( const Router *r, const Flit *f, int in_channel, $/;"	f
 xyyx_flatfly	networks/flatfly_onchip.cpp	/^void xyyx_flatfly( const Router *r, const Flit *f, int in_channel, $/;"	f
+yy_accept	lex.yy.c	/^static yyconst flex_int16_t yy_accept[36] =$/;"	v	file:
+yy_at_bol	lex.yy.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_base	lex.yy.c	/^static yyconst flex_uint16_t yy_base[42] =$/;"	v	file:
+yy_bs_column	lex.yy.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_bs_lineno	lex.yy.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_pos	lex.yy.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	lex.yy.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_stack	lex.yy.c	/^static YY_BUFFER_STATE * yy_buffer_stack = 0; \/**< Stack as an array. *\/$/;"	v	file:
+yy_buffer_stack_max	lex.yy.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	file:
+yy_buffer_stack_top	lex.yy.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	file:
+yy_buffer_state	lex.yy.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_status	lex.yy.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_c_buf_p	lex.yy.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_ch_buf	lex.yy.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_chk	lex.yy.c	/^static yyconst flex_int16_t yy_chk[86] =$/;"	v	file:
+yy_create_buffer	lex.yy.c	/^    YY_BUFFER_STATE yy_create_buffer  (FILE * file, int  size )$/;"	f
+yy_def	lex.yy.c	/^static yyconst flex_int16_t yy_def[42] =$/;"	v	file:
+yy_delete_buffer	lex.yy.c	/^    void yy_delete_buffer (YY_BUFFER_STATE  b )$/;"	f
+yy_did_buffer_switch_on_eof	lex.yy.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_ec	lex.yy.c	/^static yyconst YY_CHAR yy_ec[256] =$/;"	v	file:
+yy_fatal_error	lex.yy.c	/^static void yy_fatal_error (yyconst char* msg )$/;"	f	file:
+yy_fill_buffer	lex.yy.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_flex_debug	lex.yy.c	/^int yy_flex_debug = 0;$/;"	v
+yy_flex_strlen	lex.yy.c	/^static int yy_flex_strlen (yyconst char * s )$/;"	f	file:
+yy_flex_strncpy	lex.yy.c	/^static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )$/;"	f	file:
+yy_flush_buffer	lex.yy.c	/^    void yy_flush_buffer (YY_BUFFER_STATE  b )$/;"	f
+yy_get_next_buffer	lex.yy.c	/^static int yy_get_next_buffer (void)$/;"	f	file:
+yy_get_previous_state	lex.yy.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	file:
+yy_hold_char	lex.yy.c	/^static char yy_hold_char;$/;"	v	file:
+yy_init	lex.yy.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init_buffer	lex.yy.c	/^    static void yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	file:
+yy_init_globals	lex.yy.c	/^static int yy_init_globals (void)$/;"	f	file:
+yy_input_file	lex.yy.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	lex.yy.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	lex.yy.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_last_accepting_cpos	lex.yy.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
+yy_last_accepting_state	lex.yy.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
+yy_load_buffer_state	lex.yy.c	/^static void yy_load_buffer_state  (void)$/;"	f	file:
+yy_meta	lex.yy.c	/^static yyconst YY_CHAR yy_meta[15] =$/;"	v	file:
+yy_n_chars	lex.yy.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	lex.yy.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_new_buffer	lex.yy.c	318;"	d	file:
+yy_nxt	lex.yy.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	file:
+yy_nxt	lex.yy.c	/^static yyconst flex_uint16_t yy_nxt[86] =$/;"	v	file:
+yy_reduce_print	y.tab.c	/^yy_reduce_print (yytype_int16 *yyssp, YYSTYPE *yyvsp, int yyrule)$/;"	f	file:
+yy_scan_buffer	lex.yy.c	/^YY_BUFFER_STATE yy_scan_buffer  (char * base, yy_size_t  size )$/;"	f
+yy_scan_bytes	lex.yy.c	/^YY_BUFFER_STATE yy_scan_bytes  (yyconst char * yybytes, yy_size_t  _yybytes_len )$/;"	f
+yy_scan_string	lex.yy.c	/^YY_BUFFER_STATE yy_scan_string (yyconst char * yystr )$/;"	f
+yy_set_bol	lex.yy.c	330;"	d	file:
+yy_set_interactive	lex.yy.c	320;"	d	file:
+yy_size_t	lex.yy.c	/^typedef size_t yy_size_t;$/;"	t	file:
+yy_stack_print	y.tab.c	/^yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)$/;"	f	file:
+yy_start	lex.yy.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_state_type	lex.yy.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_switch_to_buffer	lex.yy.c	/^    void yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f
+yy_symbol_print	y.tab.c	/^yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)$/;"	f	file:
+yy_symbol_value_print	y.tab.c	/^yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)$/;"	f	file:
+yy_trans_info	lex.yy.c	/^struct yy_trans_info$/;"	s	file:
+yy_try_NUL_trans	lex.yy.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	file:
+yy_verify	lex.yy.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	file:
+yyalloc	lex.yy.c	/^void *yyalloc (yy_size_t  size )$/;"	f
+yyalloc	y.tab.c	/^union yyalloc$/;"	u	file:
+yychar	y.tab.c	/^int yychar;$/;"	v
+yycheck	y.tab.c	/^static const yytype_int8 yycheck[] =$/;"	v	file:
+yyclearin	y.tab.c	550;"	d	file:
+yyconst	lex.yy.c	106;"	d	file:
+yyconst	lex.yy.c	108;"	d	file:
+yydebug	y.tab.c	/^int yydebug;$/;"	v
+yydefact	y.tab.c	/^static const yytype_uint8 yydefact[] =$/;"	v	file:
+yydefgoto	y.tab.c	/^static const yytype_int8 yydefgoto[] =$/;"	v	file:
+yydestruct	y.tab.c	/^yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep)$/;"	f	file:
+yyensure_buffer_stack	lex.yy.c	/^static void yyensure_buffer_stack (void)$/;"	f	file:
+yyerrok	y.tab.c	549;"	d	file:
+yyerror	lex.yy.c	/^void yyerror( char * msg )$/;"	f
+yyfree	lex.yy.c	/^void yyfree (void * ptr )$/;"	f
+yyget_debug	lex.yy.c	/^int yyget_debug  (void)$/;"	f
+yyget_in	lex.yy.c	/^FILE *yyget_in  (void)$/;"	f
+yyget_leng	lex.yy.c	/^yy_size_t yyget_leng  (void)$/;"	f
+yyget_lineno	lex.yy.c	/^int yyget_lineno  (void)$/;"	f
+yyget_out	lex.yy.c	/^FILE *yyget_out  (void)$/;"	f
+yyget_text	lex.yy.c	/^char *yyget_text  (void)$/;"	f
+yyin	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyinput	lex.yy.c	/^    static int yyinput (void)$/;"	f	file:
+yyleng	lex.yy.c	/^yy_size_t yyleng;$/;"	v
+yyless	lex.yy.c	1607;"	d	file:
+yyless	lex.yy.c	1608;"	d	file:
+yyless	lex.yy.c	181;"	d	file:
+yylex_destroy	lex.yy.c	/^int yylex_destroy  (void)$/;"	f
+yylineno	lex.yy.c	/^int yylineno = 1;$/;"	v
+yylval	y.tab.c	/^YYSTYPE yylval;$/;"	v
+yymore	lex.yy.c	487;"	d	file:
+yynerrs	y.tab.c	/^int yynerrs;$/;"	v
+yyout	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yypact	y.tab.c	/^static const yytype_int8 yypact[] =$/;"	v	file:
+yypact_value_is_default	y.tab.c	476;"	d	file:
+yyparse	y.tab.c	/^yyparse (void)$/;"	f
+yypgoto	y.tab.c	/^static const yytype_int8 yypgoto[] =$/;"	v	file:
+yypop_buffer_state	lex.yy.c	/^void yypop_buffer_state (void)$/;"	f
+yypush_buffer_state	lex.yy.c	/^void yypush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f
+yyr1	y.tab.c	/^static const yytype_uint8 yyr1[] =$/;"	v	file:
+yyr2	y.tab.c	/^static const yytype_uint8 yyr2[] =$/;"	v	file:
+yyrealloc	lex.yy.c	/^void *yyrealloc  (void * ptr, yy_size_t  size )$/;"	f
+yyrestart	lex.yy.c	/^    void yyrestart  (FILE * input_file )$/;"	f
+yyrline	y.tab.c	/^static const yytype_uint8 yyrline[] =$/;"	v	file:
+yyset_debug	lex.yy.c	/^void yyset_debug (int  _bdebug )$/;"	f
+yyset_in	lex.yy.c	/^void yyset_in (FILE *  _in_str )$/;"	f
+yyset_lineno	lex.yy.c	/^void yyset_lineno (int  _line_number )$/;"	f
+yyset_out	lex.yy.c	/^void yyset_out (FILE *  _out_str )$/;"	f
+yyss_alloc	y.tab.c	/^  yytype_int16 yyss_alloc;$/;"	m	union:yyalloc	file:
+yystos	y.tab.c	/^static const yytype_uint8 yystos[] =$/;"	v	file:
+yystpcpy	y.tab.c	/^yystpcpy (char *yydest, const char *yysrc)$/;"	f	file:
+yystpcpy	y.tab.c	751;"	d	file:
+yystrlen	y.tab.c	/^yystrlen (const char *yystr)$/;"	f	file:
+yystrlen	y.tab.c	735;"	d	file:
+yysyntax_error	y.tab.c	/^yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,$/;"	f	file:
+yytable	y.tab.c	/^static const yytype_uint8 yytable[] =$/;"	v	file:
+yytable_value_is_error	y.tab.c	481;"	d	file:
+yyterminate	lex.yy.c	648;"	d	file:
+yytext	lex.yy.c	/^char *yytext;$/;"	v
+yytext_ptr	lex.yy.c	356;"	d	file:
+yytext_ptr	lex.yy.c	358;"	d	file:
+yytname	y.tab.c	/^static const char *const yytname[] =$/;"	v	file:
+yytnamerr	y.tab.c	/^yytnamerr (char *yyres, const char *yystr)$/;"	f	file:
+yytokentype	y.tab.c	/^  enum yytokentype$/;"	g	file:
+yytokentype	y.tab.h	/^  enum yytokentype$/;"	g
+yytoknum	y.tab.c	/^static const yytype_uint16 yytoknum[] =$/;"	v	file:
+yytranslate	y.tab.c	/^static const yytype_uint8 yytranslate[] =$/;"	v	file:
+yytype_int16	y.tab.c	/^typedef YYTYPE_INT16 yytype_int16;$/;"	t	file:
+yytype_int16	y.tab.c	/^typedef short int yytype_int16;$/;"	t	file:
+yytype_int8	y.tab.c	/^typedef YYTYPE_INT8 yytype_int8;$/;"	t	file:
+yytype_int8	y.tab.c	/^typedef signed char yytype_int8;$/;"	t	file:
+yytype_uint16	y.tab.c	/^typedef YYTYPE_UINT16 yytype_uint16;$/;"	t	file:
+yytype_uint16	y.tab.c	/^typedef unsigned short int yytype_uint16;$/;"	t	file:
+yytype_uint8	y.tab.c	/^typedef YYTYPE_UINT8 yytype_uint8;$/;"	t	file:
+yytype_uint8	y.tab.c	/^typedef unsigned char yytype_uint8;$/;"	t	file:
+yyvs_alloc	y.tab.c	/^  YYSTYPE yyvs_alloc;$/;"	m	union:yyalloc	file:
+yywrap	lex.yy.c	/^int yywrap()$/;"	f
 ~AnyNet	networks/anynet.cpp	/^AnyNet::~AnyNet(){$/;"	f	class:AnyNet
 ~BatchTrafficManager	batchtrafficmanager.cpp	/^BatchTrafficManager::~BatchTrafficManager( )$/;"	f	class:BatchTrafficManager
 ~Buffer	buffer.cpp	/^Buffer::~Buffer()$/;"	f	class:Buffer

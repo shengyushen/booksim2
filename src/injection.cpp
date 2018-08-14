@@ -57,6 +57,7 @@ InjectionProcess * InjectionProcess::New(string const & inject, int nodes,
 					 double load, 
 					 Configuration const * const config)
 {
+	//find the param for injection rate
   string process_name;
   string param_str;
   size_t left = inject.find_first_of('(');

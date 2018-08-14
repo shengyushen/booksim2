@@ -39,6 +39,7 @@ class Flit {
 public:
 
   const static int NUM_FLIT_TYPES = 5;
+	// this subnet is used to run different flit type? not pack type?
   enum FlitType { READ_REQUEST  = 0, 
 		  READ_REPLY    = 1,
 		  WRITE_REQUEST = 2,

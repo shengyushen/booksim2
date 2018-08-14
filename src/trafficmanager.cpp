@@ -124,7 +124,7 @@ cout<<"SSY : TrafficPattern start"<<endl;
     }
     _use_read_write.resize(_classes, _use_read_write.back());
 
-    _write_fraction = config.GetFloatArray("write_fraction");
+    _write_fraction = config.GetFloatArray("write_fraction"); // this means the percent of write, which also determine the read
     if(_write_fraction.empty()) {
         _write_fraction.push_back(config.GetFloat("write_fraction"));
     }

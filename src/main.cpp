@@ -102,11 +102,13 @@ bool Simulate( BookSimConfig const & config )
   /*To include a new network, must register the network here
    *add an else if statement with the name of the network
    */
+  cout<<"Simulate : subnets "<<subnets<<endl;
   net.resize(subnets);//so subnet is router chip with radix?
+  //subnet default value is 1
   for (int i = 0; i < subnets; ++i) {
     ostringstream name;
     name << "network_" << i;
-    net[i] = Network::New( config, name.str() );
+    net[i] = Network::New( config, name.str() );//it has varias sub Network for independent traffic routing
   }
 
   /*tcc and characterize are legacy
