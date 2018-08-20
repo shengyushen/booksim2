@@ -1619,6 +1619,7 @@ gReadReplyEndVC	routefunc.cpp	/^int gReadReplyBeginVC, gReadReplyEndVC;$/;"	v
 gReadReqBeginVC	routefunc.cpp	/^int gReadReqBeginVC, gReadReqEndVC;$/;"	v
 gReadReqEndVC	routefunc.cpp	/^int gReadReqBeginVC, gReadReqEndVC;$/;"	v
 gRoutingFunctionMap	routefunc.cpp	/^map<string, tRoutingFunction> gRoutingFunctionMap;$/;"	v
+gSsyOut	main.cpp	/^ostream * gSsyOut;$/;"	v
 gTrace	main.cpp	/^bool gTrace;$/;"	v
 gWatchOut	main.cpp	/^ostream * gWatchOut;$/;"	v
 gWriteReplyBeginVC	routefunc.cpp	/^int gWriteReplyBeginVC, gWriteReplyEndVC;$/;"	v

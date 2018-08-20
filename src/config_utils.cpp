@@ -60,7 +60,7 @@ void Configuration::Assign(string const & field, string const & value)
   if(match != _str_map.end()) {
     _str_map[field] = value;
   } else {
-    ParseError("Unknown string field: " + field);
+    ParseError("Unknown string field1: " + field);
   }
 }
 

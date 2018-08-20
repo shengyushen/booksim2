@@ -953,7 +953,7 @@ void TrafficManager::_Inject(){
         }
     }
 }
-
+//this is the place of every step
 void TrafficManager::_Step( )
 {
     bool flits_in_flight = false;
@@ -967,6 +967,14 @@ void TrafficManager::_Step( )
 
     vector<map<int, Flit *> > flits(_subnets);
   
+		//display the router's input buffer state
+    for ( int subnet = 0; subnet < _subnets; ++subnet ) {
+			if(_time % 100 == 0) {
+				cout<<"_Step:_time "<<_time<<endl;
+				cout<<"_Step:subnet "<<subnet<<endl;
+				_net[subnet]->Display(cout);//Network IQRouter Buffer  VC
+			}
+		}
     for ( int subnet = 0; subnet < _subnets; ++subnet ) {
         for ( int n = 0; n < _nodes; ++n ) {
             Flit * const f = _net[subnet]->ReadFlit( n );

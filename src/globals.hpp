@@ -49,5 +49,6 @@ extern int gNodes;
 extern bool gTrace;
 
 extern std::ostream * gWatchOut;
+extern std::ostream * gSsyOut;
 
 #endif

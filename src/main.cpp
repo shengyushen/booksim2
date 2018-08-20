@@ -90,6 +90,8 @@ bool gTrace;
 
 ostream * gWatchOut;
 
+ostream * gSsyOut;
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -180,6 +182,15 @@ int main( int argc, char **argv )
     gWatchOut = &cout;
   } else {
     gWatchOut = new ofstream(watch_out_file.c_str());
+  }
+  
+  string ssy_out_file = config.GetStr( "ssy_out" );
+  if(ssy_out_file == "") {
+		assert(false);
+  } else if(ssy_out_file == "-") {
+    gSsyOut = &cout;
+  } else {
+    gSsyOut = new ofstream(ssy_out_file.c_str());
   }
   
 

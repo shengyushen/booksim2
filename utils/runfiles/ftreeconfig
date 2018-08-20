@@ -100,8 +100,11 @@ traffic       = bitcomp;
 
 injection_rate = 0.29;
 
-print_activity = 1 ;
-viewer_trace = 1 ;
-watch_out = ftree ;
+//print_activity = 1 ;
+//viewer_trace = 1 ;
 
+watch_out = ftree ;
+watch_file = watch_file ; //which packet or flit to watch
+
+ssy_out = ssy_out ; // this is ssy's log file for buffer state
 
