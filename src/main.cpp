@@ -126,7 +126,7 @@ bool Simulate( BookSimConfig const & config )
   total_time = 0.0;
   gettimeofday(&start_time, NULL);
 
-  bool result = trafficManager->Run() ;
+  bool result = trafficManager->Run() ;//run from trafficManager
 
 
   gettimeofday(&end_time, NULL);

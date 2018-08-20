@@ -61,6 +61,7 @@ Router::Router( const Configuration& config,
 TimedModule( parent, name ), _id( id ), _inputs( inputs ), _outputs( outputs ),
    _partial_internal_cycles(0.0)
 {
+	// these _inputs are the number of input
   _crossbar_delay   = ( config.GetInt( "st_prepare_delay" ) + 
 			config.GetInt( "st_final_delay" ) );
   _credit_delay     = config.GetInt( "credit_delay" );
