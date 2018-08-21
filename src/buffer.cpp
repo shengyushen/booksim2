@@ -77,6 +77,7 @@ void Buffer::AddFlit( int vc, Flit *f )
 
 void Buffer::Display( ostream & os ) const
 {
+	os << FullName() << " _occupancy: " <<_occupancy<<" _size: "<<_size<<endl;
   for(vector<VC*>::const_iterator i = _vc.begin(); i != _vc.end(); ++i) {
     (*i)->Display(os);
   }

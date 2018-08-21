@@ -928,6 +928,7 @@ void TrafficManager::_Inject(){
         for ( int c = 0; c < _classes; ++c ) {
             // Potentially generate packets for any (input,class)
             // that is currently empty
+						
             if ( _partial_packets[input][c].empty() ) {
                 bool generated = false;
                 while( !generated && ( _qtime[input][c] <= _time ) ) {
@@ -938,6 +939,7 @@ void TrafficManager::_Inject(){
                                          _include_queuing==1 ? 
                                          _qtime[input][c] : _time );
                         generated = true;
+												cout<<"generating pack for input "<<input<<" class "<<c<<endl;
                     }
                     // only advance time if this is not a reply packet
                     if(!_use_read_write[c] || (stype >= 0)){
@@ -967,17 +969,11 @@ void TrafficManager::_Step( )
 
     vector<map<int, Flit *> > flits(_subnets);
   
-		//display the router's input buffer state
-    for ( int subnet = 0; subnet < _subnets; ++subnet ) {
-			if(_time % 100 == 0) {
-				cout<<"_Step:_time "<<_time<<endl;
-				cout<<"_Step:subnet "<<subnet<<endl;
-				_net[subnet]->Display(cout);//Network IQRouter Buffer  VC
-			}
-		}
+
     for ( int subnet = 0; subnet < _subnets; ++subnet ) {
         for ( int n = 0; n < _nodes; ++n ) {
             Flit * const f = _net[subnet]->ReadFlit( n );
+						//ejecting a flit at node n
             if ( f ) {
                 if(f->watch) {
                     *gWatchOut << GetSimTime() << " | "
@@ -997,6 +993,7 @@ void TrafficManager::_Step( )
             }
 
             Credit * const c = _net[subnet]->ReadCredit( n );
+						//injecting a credit
             if ( c ) {
 #ifdef TRACK_FLOWS
                 for(set<int>::const_iterator iter = c->vc.begin(); iter != c->vc.end(); ++iter) {
@@ -1016,8 +1013,23 @@ void TrafficManager::_Step( )
     }
   
     if ( !_empty_network ) {
-        _Inject();
+        _Inject();//generating packets but not sendt out to switchs
     }
+		//display the router's input buffer state
+		if(_time % 100 == 0) {
+ 			for ( int subnet = 0; subnet < _subnets; ++subnet ) {
+				cout<<"_Step:_time "<<_time<<endl;
+				cout<<"_Step:subnet "<<subnet<<endl;
+				_net[subnet]->Display(cout);//Network IQRouter Buffer  VC
+			}
+	    for ( int input = 0; input < _nodes; ++input ) {
+	        for ( int c = 0; c < _classes; ++c ) {
+	            // Potentially generate packets for any (input,class)
+	            // that is currently empty
+							cout<<"_partial_packets input "<<input<<" class "<<c<<" length "<<_partial_packets[input][c].size()<<endl;
+					}
+			}
+		}
 
     for(int subnet = 0; subnet < _subnets; ++subnet) {
 
