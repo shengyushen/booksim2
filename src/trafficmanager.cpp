@@ -1,4 +1,4 @@
-// $Id$
+
 
 /*
   Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
@@ -776,7 +776,7 @@ int TrafficManager::_IssuePacket( int source, int cl )
             }
         }
     } else { //normal mode
-        result = _injection_process[cl]->test(source) ? 1 : 0;
+        result = _injection_process[cl]->test(source) ? 1 : 0; //determining whether the injection rate is exceeded
         _requestsOutstanding[source]++;
     } 
     if(result != 0) {
@@ -919,6 +919,7 @@ void TrafficManager::_GeneratePacket( int source, int stype,
         }
 
         _partial_packets[source][cl].push_back( f );
+				cout<<"generating pack for input "<<source<<" class "<<cl<<" size "<<_partial_packets[source][cl].size()<<endl;
     }
 }
 
@@ -932,15 +933,17 @@ void TrafficManager::_Inject(){
             if ( _partial_packets[input][c].empty() ) {
                 bool generated = false;
                 while( !generated && ( _qtime[input][c] <= _time ) ) {
-                    int stype = _IssuePacket( input, c );
+                    int stype = _IssuePacket( input, c ); //determining whether the injection rate is exceeded
 	  
                     if ( stype != 0 ) { //generate a packet
                         _GeneratePacket( input, stype, c, 
                                          _include_queuing==1 ? 
                                          _qtime[input][c] : _time );
                         generated = true;
-												cout<<"generating pack for input "<<input<<" class "<<c<<endl;
-                    }
+                    }/* else {
+											cout<<"can not gen for input "<<input<<" c "<<c<<" stype "<<stype<<endl;
+										}*/
+										
                     // only advance time if this is not a reply packet
                     if(!_use_read_write[c] || (stype >= 0)){
                         ++_qtime[input][c];
@@ -1011,17 +1014,18 @@ void TrafficManager::_Step( )
         }
         _net[subnet]->ReadInputs( );
     }
-  
+  	cout<<"_time "<<_time<<endl;
     if ( !_empty_network ) {
         _Inject();//generating packets but not sendt out to switchs
     }
-		//display the router's input buffer state
 		if(_time % 100 == 0) {
+			//display the router's input buffer state
  			for ( int subnet = 0; subnet < _subnets; ++subnet ) {
 				cout<<"_Step:_time "<<_time<<endl;
 				cout<<"_Step:subnet "<<subnet<<endl;
 				_net[subnet]->Display(cout);//Network IQRouter Buffer  VC
 			}
+			//the packet in injectors
 	    for ( int input = 0; input < _nodes; ++input ) {
 	        for ( int c = 0; c < _classes; ++c ) {
 	            // Potentially generate packets for any (input,class)
