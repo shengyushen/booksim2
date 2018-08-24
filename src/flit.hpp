@@ -54,9 +54,9 @@ public:
   bool head;
   bool tail;
   
-  int  ctime;
-  int  itime;
-  int  atime;
+  int  ctime;   //create time, may wait for its turn to be injected
+  int  itime;  //injection time
+  int  atime; //accepted time, or eject time
 
   int  id;
   int  pid;

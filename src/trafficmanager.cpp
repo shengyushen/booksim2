@@ -355,6 +355,7 @@ cout<<"SSY : TrafficPattern"<<endl;
     _acc_stopping_threshold.resize(_classes, _acc_stopping_threshold.back());
 
     _include_queuing = config.GetInt( "include_queuing" );
+		cout<<"_include_queuing "<<_include_queuing<<endl;
 
     _print_csv_results = config.GetInt( "print_csv_results" );
     _deadlock_warn_timeout = config.GetInt( "deadlock_warn_timeout" );
@@ -697,6 +698,11 @@ void TrafficManager::_RetireFlit( Flit *f, int dest )
             *gWatchOut << GetSimTime() << " | "
                        << "node" << dest << " | "
                        << "Retiring packet " << f->pid 
+												<< " f->head " << f->head
+												<< " f->tail " << f->tail
+												<< " f->atime " << f->atime
+												<< " f->ctime " << f->ctime
+												<< " f->itime " << f->itime
                        << " (plat = " << f->atime - head->ctime
                        << ", nlat = " << f->atime - head->itime
                        << ", frag = " << (f->atime - head->atime) - (f->id - head->id) // NB: In the spirit of solving problems using ugly hacks, we compute the packet length by taking advantage of the fact that the IDs of flits within a packet are contiguous.
@@ -939,6 +945,7 @@ void TrafficManager::_Inject(){
                         _GeneratePacket( input, stype, c, 
                                          _include_queuing==1 ? 
                                          _qtime[input][c] : _time );
+											//_include_queuing means including the queue time in the packet life time, also means distingushing the packet's creating and injection time
                         generated = true;
                     }/* else {
 											cout<<"can not gen for input "<<input<<" c "<<c<<" stype "<<stype<<endl;
@@ -954,7 +961,16 @@ void TrafficManager::_Inject(){
                      ( _qtime[input][c] > _drain_time ) ) {
                     _qdrained[input][c] = true;
                 }
-            }
+            } else {
+							//something still have not been sendout
+							if(input==0) {
+								cout<<"CTIME input "<<input
+										<<" pid "<<_partial_packets[input][c].front()->pid
+										<<" _time "<<_time
+										<<" ctime "<<_partial_packets[input][c].front()->ctime
+										<<" delta "<<_time-(_partial_packets[input][c].front()->ctime)<<endl;
+							}
+						}
         }
     }
 }
