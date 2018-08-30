@@ -210,6 +210,7 @@ public:
   }
   inline bool IsAvailableFor( int vc = 0 ) const {
     assert( ( vc >= 0 ) && ( vc < _vcs ) );
+		//there is still buffer_state.cpp that update both _in_use_by occupancy
     return _in_use_by[vc] < 0;
   }
   inline int UsedBy(int vc = 0) const {

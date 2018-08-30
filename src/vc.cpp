@@ -207,7 +207,7 @@ bool VC::IsWatched( ) const
 void VC::Display( ostream & os ) const
 {
   if ( _state != VC::idle ) {
-    os << FullName() << ": "
+    os <<" VC Display "<< FullName() << ": "
        << " state: " << VCSTATE[_state];
     if(_state == VC::active) {
       os << " out_port: " << _out_port

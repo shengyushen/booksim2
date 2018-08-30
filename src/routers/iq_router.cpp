@@ -446,7 +446,7 @@ void IQRouter::_InputQueuing( )
       --_outstanding_credits[cl][output];
     }
 #endif
-
+		cout<<"callinig ProcessCredit in iq_router"<<FullName()<<" _InputQueuing "<<endl;
     dest_buf->ProcessCredit(c);
     c->Free();
     _proc_credits.pop_front();
@@ -893,7 +893,8 @@ void IQRouter::_VCAllocUpdate( )
       
       BufferState * const dest_buf = _next_buf[match_output];
       assert(dest_buf->IsAvailableFor(match_vc));
-      
+      //this input*_vcs+vc will be filled into _in_use_by field in buffer state
+      //and it means the vc number offset by the input port
       dest_buf->TakeBuffer(match_vc, input*_vcs + vc);
 	
       cur_buf->SetOutput(vc, match_output, match_vc);

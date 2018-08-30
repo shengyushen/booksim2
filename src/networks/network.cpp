@@ -199,6 +199,7 @@ void Network::Evaluate( )
 
 void Network::WriteOutputs( )
 {
+	//we have pushed all channel flit and credit into _timed_modules, so we can process them all at here
   for(deque<TimedModule *>::const_iterator iter = _timed_modules.begin();
       iter != _timed_modules.end();
       ++iter) {

@@ -925,7 +925,7 @@ void TrafficManager::_GeneratePacket( int source, int stype,
         }
 
         _partial_packets[source][cl].push_back( f );
-				cout<<"generating pack for input "<<source<<" class "<<cl<<" size "<<_partial_packets[source][cl].size()<<endl;
+				cout<<"GENERATING : "<<" input "<<source<<" pid "<<_partial_packets[source][cl].back()->pid<<" _time "<<_time<<" ctime "<<_partial_packets[source][cl].back()->ctime<<" delta "<<_time-_partial_packets[source][cl].back()->ctime<<endl;
     }
 }
 
@@ -963,13 +963,13 @@ void TrafficManager::_Inject(){
                 }
             } else {
 							//something still have not been sendout
-							if(input==0) {
-								cout<<"CTIME input "<<input
+							//if(input==0) {
+								cout<<"CTIME : input "<<input
 										<<" pid "<<_partial_packets[input][c].front()->pid
 										<<" _time "<<_time
 										<<" ctime "<<_partial_packets[input][c].front()->ctime
 										<<" delta "<<_time-(_partial_packets[input][c].front()->ctime)<<endl;
-							}
+							//}
 						}
         }
     }
@@ -985,7 +985,8 @@ void TrafficManager::_Step( )
         _deadlock_timer = 0;
         cout << "WARNING: Possible network deadlock.\n";
     }
-
+		//list of flits to be ejected
+		//and these flit will be collected belllow, and then the new credit will be injected at the end of _Step
     vector<map<int, Flit *> > flits(_subnets);
   
 
@@ -1011,8 +1012,8 @@ void TrafficManager::_Step( )
                 }
             }
 
-            Credit * const c = _net[subnet]->ReadCredit( n );
-						//injecting a credit
+            Credit * const c = _net[subnet]->ReadCredit( n );//this return a list of credits
+						//arriving of credits for all VCs
             if ( c ) {
 #ifdef TRACK_FLOWS
                 for(set<int>::const_iterator iter = c->vc.begin(); iter != c->vc.end(); ++iter) {
@@ -1024,6 +1025,7 @@ void TrafficManager::_Step( )
                     --_outstanding_credits[cl][subnet][n];
                 }
 #endif
+								cout<<"_Step : before ProcessCredit _time "<<_time<<" input "<<n<<" credit arriving"<<endl;
                 _buf_states[n][subnet]->ProcessCredit(c);
                 c->Free();
             }
@@ -1034,7 +1036,7 @@ void TrafficManager::_Step( )
     if ( !_empty_network ) {
         _Inject();//generating packets but not sendt out to switchs
     }
-		if(_time % 100 == 0) {
+		//if(_time % 100 == 0) {
 			//display the router's input buffer state
  			for ( int subnet = 0; subnet < _subnets; ++subnet ) {
 				cout<<"_Step:_time "<<_time<<endl;
@@ -1049,7 +1051,14 @@ void TrafficManager::_Step( )
 							cout<<"_partial_packets input "<<input<<" class "<<c<<" length "<<_partial_packets[input][c].size()<<endl;
 					}
 			}
-		}
+			//the buffer state classes
+    	/*for(int subnet = 0; subnet < _subnets; ++subnet) {
+        for(int n = 0; n < _nodes; ++n) {
+            BufferState * const dest_buf = _buf_states[n][subnet];
+						dest_buf->Display();
+				}
+			}*/
+		//}
 
     for(int subnet = 0; subnet < _subnets; ++subnet) {
 
@@ -1098,6 +1107,7 @@ void TrafficManager::_Step( )
                     continue;
                 }
 
+								//finding new VC for flit to send
                 if(cf->head && cf->vc == -1) { // Find first available VC
 	  
                     OutputSet route_set;
@@ -1151,6 +1161,7 @@ void TrafficManager::_Step( )
                             vc_start :
                             (vc_start + (lvc - vc_start + i) % vc_count);
                         assert((vc >= vc_start) && (vc <= vc_end));
+												cout<<"DEST_BUF : input "<<n<<" _time "<<_time<<" usage "<<dest_buf->UsedBy()<<" cf pid "<<cf->pid<<endl;
                         if(!dest_buf->IsAvailableFor(vc)) {
                             if(cf->watch) {
                                 *gWatchOut << GetSimTime() << " | " << FullName() << " | "
@@ -1194,6 +1205,7 @@ void TrafficManager::_Step( )
                 }
             }
 
+						//sending new flits
             if(f) {
 
                 assert(f->subnetwork == subnet);
@@ -1225,6 +1237,7 @@ void TrafficManager::_Step( )
                         f->la_route_set.Clear();
                     }
 
+										cout<<"_Step : before TakeBuffer _time "<<_time<<" input "<<n<<" moving new sending flit into buffer "<<endl;
                     dest_buf->TakeBuffer(f->vc);
                     _last_vc[n][subnet][c] = f->vc;
                 }
@@ -1239,6 +1252,7 @@ void TrafficManager::_Step( )
 #endif
 
                 dest_buf->SendingFlit(f);
+								cout<<"SENDINGFLIT : input "<<n<<" pid "<<f->pid<<" _time "<<_time<<" delta "<<_time-(f->ctime)<<endl;
 	
                 if(_pri_type == network_age_based) {
                     f->pri = numeric_limits<int>::max() - _time;
@@ -1278,7 +1292,7 @@ void TrafficManager::_Step( )
             }
         }
     }
-
+		// here we will inject new credit for all these ejected flits
     for(int subnet = 0; subnet < _subnets; ++subnet) {
         for(int n = 0; n < _nodes; ++n) {
             map<int, Flit *>::const_iterator iter = flits[subnet].find(n);
@@ -1295,6 +1309,8 @@ void TrafficManager::_Step( )
                 }
                 Credit * const c = Credit::New();
                 c->vc.insert(f->vc);
+				//this is exactly the place to inject credit (Send to input) for ejected flit
+				cout<<"_Step : before WriteCredit _time "<<_time<<" input "<<n<<endl;
                 _net[subnet]->WriteCredit(c, n);
 	
 #ifdef TRACK_FLOWS
@@ -1306,6 +1322,7 @@ void TrafficManager::_Step( )
         }
         flits[subnet].clear();
         _net[subnet]->Evaluate( );
+				//forcing the outputs into queue, and also force the queue into inputs
         _net[subnet]->WriteOutputs( );
     }
 
