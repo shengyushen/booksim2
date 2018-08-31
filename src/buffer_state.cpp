@@ -598,7 +598,7 @@ void BufferState::ProcessCredit( Credit const * const c )
     }
     if(_wait_for_tail_credit && !_vc_occupancy[vc] && _tail_sent[vc]) {
       assert(_in_use_by[vc] >= 0);
-			cout<<"BufferState : ProcessCredit : "<<FullName()<<": updating _in_use_by -1 and occupancy--"<<endl;
+			cout<<"BufferState : ProcessCredit : "<<FullName()<<": updating _in_use_by -1 and occupancy-- credit id "<<c->id<<" vc "<<vc<<endl;
       _in_use_by[vc] = -1;
     }
 
@@ -676,6 +676,7 @@ void BufferState::Display( ostream & os ) const
     os << "  VC " << v << ": ";
     os << "in_use_by = " << _in_use_by[v] 
        << ", tail_sent = " << _tail_sent[v]
+       << ", _last_id = " << _last_id[v]
        << ", occupied = " << _vc_occupancy[v] << endl;
   }
 }

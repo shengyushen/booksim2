@@ -120,6 +120,7 @@ void Channel<T>::WriteOutputs() {
   _output = item.second;
   assert(_output);
   _wait_queue.pop();
+	//cout<<"WriteOutputs "<<FullName()<<endl;
 }
 
 #endif

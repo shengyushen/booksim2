@@ -2269,6 +2269,7 @@ void IQRouter::_SendCredits( )
       Credit * const c = _credit_buffer[input].front( );
       assert(c);
       _credit_buffer[input].pop( );
+			cout<<"IQRouter::_SendCredits "<<FullName()<<" input "<<input<<" credit id "<<c->id<<endl;
       _input_credits[input]->Send( c );
     }
   }
