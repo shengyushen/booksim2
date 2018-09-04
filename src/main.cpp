@@ -186,7 +186,7 @@ int main( int argc, char **argv )
   
   string ssy_out_file = config.GetStr( "ssy_out" );
   if(ssy_out_file == "") {
-		assert(false);
+		//assert(false);
   } else if(ssy_out_file == "-") {
     gSsyOut = &cout;
   } else {

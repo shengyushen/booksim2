@@ -177,15 +177,19 @@ void Network::_Alloc( )
     _chan_cred[c] = new CreditChannel(this, name.str());
     _timed_modules.push_back(_chan_cred[c]);
   }
+	//now the routers are not in the _timed_modules, they will be pused into in FatTree
+	
 }
 
 void Network::ReadInputs( )
 {
+	if(gSsyOut) cout<<"Network::ReadInputs "<<FullName()<<" start"<<endl;
   for(deque<TimedModule *>::const_iterator iter = _timed_modules.begin();
       iter != _timed_modules.end();
       ++iter) {
     (*iter)->ReadInputs( );
   }
+	if(gSsyOut) cout<<"Network::ReadInputs "<<FullName()<<" end"<<endl;
 }
 
 void Network::Evaluate( )

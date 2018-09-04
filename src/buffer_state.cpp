@@ -598,7 +598,7 @@ void BufferState::ProcessCredit( Credit const * const c )
     }
     if(_wait_for_tail_credit && !_vc_occupancy[vc] && _tail_sent[vc]) {
       assert(_in_use_by[vc] >= 0);
-			cout<<"BufferState : ProcessCredit : "<<FullName()<<": updating _in_use_by -1 and occupancy-- credit id "<<c->id<<" vc "<<vc<<endl;
+			if(gSsyOut) cout<<"BufferState : ProcessCredit : "<<FullName()<<": updating _in_use_by -1 and occupancy-- credit id "<<c->id<<" vc "<<vc<<endl;
       _in_use_by[vc] = -1;
     }
 
@@ -643,7 +643,7 @@ void BufferState::SendingFlit( Flit const * const f )
     
     if ( !_wait_for_tail_credit ) {
       assert(_in_use_by[vc] >= 0);
-			cout<<"BufferState : SendingFlit _in_use_by -1 and _occupancy++ in "<<FullName()<<""<<endl;
+			if(gSsyOut) cout<<"BufferState : SendingFlit _in_use_by -1 and _occupancy++ in "<<FullName()<<""<<endl;
       _in_use_by[vc] = -1;
     }
   }
@@ -660,7 +660,7 @@ void BufferState::TakeBuffer( int vc, int tag )
     err << "Buffer taken while in use for VC " << vc;
     Error( err.str() );
   }
-	cout<<"BufferState : TakeBuffer setting _in_use_by "<<tag<<" for "<<FullName()<<endl;
+	if(gSsyOut) cout<<"BufferState : TakeBuffer setting _in_use_by "<<tag<<" for "<<FullName()<<endl;
 	//this tag is the vc allocation result, it is the vc offset by the input
 	//while -1 means idel
   _in_use_by[vc] = tag;

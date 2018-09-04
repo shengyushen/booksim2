@@ -220,6 +220,7 @@ void IQRouter::ReadInputs( )
 {
   bool have_flits = _ReceiveFlits( );
   bool have_credits = _ReceiveCredits( );
+	if(gSsyOut) cout<<"IQRouter::ReadInputs "<<FullName()<<endl;
   _active = _active || have_flits || have_credits;
 }
 
@@ -446,7 +447,7 @@ void IQRouter::_InputQueuing( )
       --_outstanding_credits[cl][output];
     }
 #endif
-		cout<<"callinig ProcessCredit in iq_router"<<FullName()<<" _InputQueuing "<<endl;
+		if(gSsyOut) cout<<"callinig ProcessCredit in iq_router"<<FullName()<<" _InputQueuing "<<endl;
     dest_buf->ProcessCredit(c);
     c->Free();
     _proc_credits.pop_front();
@@ -2228,6 +2229,8 @@ void IQRouter::_OutputQueuing( )
     assert(c);
     assert(!c->vc.empty());
 
+		//it seems the new credit is stored here
+		if(gSsyOut) cout<<"IQRouter::_OutputQueuing input "<<input<<" c->id "<<c->id<<endl;
     _credit_buffer[input].push(c);
   }
   _out_queue_credits.clear();
@@ -2269,7 +2272,7 @@ void IQRouter::_SendCredits( )
       Credit * const c = _credit_buffer[input].front( );
       assert(c);
       _credit_buffer[input].pop( );
-			cout<<"IQRouter::_SendCredits "<<FullName()<<" input "<<input<<" credit id "<<c->id<<endl;
+			if(gSsyOut) cout<<"IQRouter::_SendCredits "<<FullName()<<" input "<<input<<" credit id "<<c->id<<endl;
       _input_credits[input]->Send( c );
     }
   }

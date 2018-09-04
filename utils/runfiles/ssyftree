@@ -108,5 +108,5 @@ injection_rate = 0.29;
 watch_out = ftree ;
 watch_file = watch_file ; //which packet or flit to watch
 
-ssy_out = ssy_out ; // this is ssy's log file for buffer state
+//ssy_out = ssy_out ; // this is ssy's log file for buffer state
 

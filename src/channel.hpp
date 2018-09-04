@@ -99,10 +99,12 @@ T * Channel<T>::Receive() {
 
 template<typename T>
 void Channel<T>::ReadInputs() {
+	if(gSsyOut) cout<<"Channel::ReadInputs "<<FullName()<<" start"<<endl;
   if(_input) {
     _wait_queue.push(make_pair(GetSimTime() + _delay - 1, _input));
     _input = 0;
   }
+	if(gSsyOut) cout<<"Channel::ReadInputs "<<FullName()<<" end"<<endl;
 }
 
 template<typename T>
